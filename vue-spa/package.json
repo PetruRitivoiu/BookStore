@@ -1,0 +1,21 @@
+{
+  "name": "vue-spa",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "node server",
+    "webpack": "webpack --config ./build/webpack.base.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Petru Ioan Ritivoiu",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "vue": "^2.5.21"
+  },
+  "devDependencies": {
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.2.0"
+  }
+}
