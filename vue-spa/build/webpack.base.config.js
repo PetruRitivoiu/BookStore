@@ -14,7 +14,7 @@ const config = {
     publicPath: "/",
     filename: "assets/js/[name].js"
   },
-  mode : 'production'
+  mode : 'development'
 };
 
 module.exports = config;
