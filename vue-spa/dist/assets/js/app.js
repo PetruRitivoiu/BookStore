@@ -376,7 +376,7 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"app\", function() { return app; });\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.js\");\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _components_firebaseInit_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/firebaseInit.js */ \"./src/components/firebaseInit.js\");\n\n\n\nlet ref = _components_firebaseInit_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].ref(\"Franz Kafka\");\n\nref.on(\"value\", function(snapshot){\n  console.log(\"Test conexiune baza de date: \" + snapshot.val()[0].author);\n});\n\nlet app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({\n  data: {\n    hello: \"placeholder\"\n  }\n});\n\n\n\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"app\", function() { return app; });\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.js\");\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _components_firebaseInit_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/firebaseInit.js */ \"./src/components/firebaseInit.js\");\n\r\n\r\n\r\nlet ref = _components_firebaseInit_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].ref(\"Franz Kafka\");\r\n\r\nref.on(\"value\", function(snapshot){\r\n  console.log(\"Test conexiune baza de date: \" + snapshot.val()[0].author);\r\n});\r\n\r\nlet app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({\r\n  data: {\r\n    hello: \"placeholder\"\r\n  }\r\n});\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ }),
 
@@ -388,7 +388,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app */ \"./src/app.js\");\n\n\n_app__WEBPACK_IMPORTED_MODULE_0__[\"app\"].$mount(\"#app\");\n\n\n//# sourceURL=webpack:///./src/client-entry.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app */ \"./src/app.js\");\n\r\n\r\n_app__WEBPACK_IMPORTED_MODULE_0__[\"app\"].$mount(\"#app\");\r\n\n\n//# sourceURL=webpack:///./src/client-entry.js?");
 
 /***/ }),
 
@@ -412,7 +412,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! firebase */ \"./node_modules/firebase/dist/index.cjs.js\");\n/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(firebase__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var firebase_database__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/database */ \"./node_modules/firebase/database/dist/index.esm.js\");\n/* harmony import */ var _firebaseConfig__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./firebaseConfig */ \"./src/components/firebaseConfig.js\");\n //trebuie instalat separat, nu vine cu webpack\n\n\nconst firebaseApp = firebase__WEBPACK_IMPORTED_MODULE_0___default.a.initializeApp(_firebaseConfig__WEBPACK_IMPORTED_MODULE_2__[\"default\"])\n/* harmony default export */ __webpack_exports__[\"default\"] = (firebaseApp.database());\n\n\n//# sourceURL=webpack:///./src/components/firebaseInit.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! firebase */ \"./node_modules/firebase/dist/index.cjs.js\");\n/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(firebase__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var firebase_database__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/database */ \"./node_modules/firebase/database/dist/index.esm.js\");\n/* harmony import */ var _firebaseConfig__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./firebaseConfig */ \"./src/components/firebaseConfig.js\");\n //trebuie instalat separat, nu vine cu webpack\r\n\r\n\r\nconst firebaseApp = firebase__WEBPACK_IMPORTED_MODULE_0___default.a.initializeApp(_firebaseConfig__WEBPACK_IMPORTED_MODULE_2__[\"default\"])\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (firebaseApp.database());\r\n\n\n//# sourceURL=webpack:///./src/components/firebaseInit.js?");
 
 /***/ })
 
