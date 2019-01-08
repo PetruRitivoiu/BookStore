@@ -9,7 +9,8 @@ ref.on("value", function(snapshot){
 
 let app = new Vue({
   data: {
-    hello: "placeholder"
+    hello: "Hello World!",
+    numbers: ["one", "two", "three"]
   }
 });
 
