@@ -1,4 +1,5 @@
 const path = require("path")
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 const config = {
   entry :{
@@ -15,6 +16,13 @@ const config = {
       {
         test: /\.vue$/,
         loader: 'vue-loader'
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ]
       }
     ]
   },
@@ -28,6 +36,9 @@ const config = {
     publicPath: "/",
     filename: "assets/js/[name].js"
   },
+  plugins: [
+    new VueLoaderPlugin()
+  ],
   mode : 'development'
 };
 
