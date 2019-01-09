@@ -3,11 +3,34 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Vue SPA</title>
+        <title>Book store</title>
     </head>
 
     <body>
-      <div id="app">{{hello}}
+      <div id="app">
+        <h1>{{title}}</h1>
+
+        <input type="text" v-model="author" placeholder="author" v-on:keydown.enter="getBooksByAuthor(author)">
+        <button v-on:click="getBooksByAuthor(author)">Search</button>
+        <h4 v-if="author">Search results for {{author}}</h4>
+
+        <ul>
+          <li v-for='book in books'>
+            <div>
+              <button @click=editBook(book)>Edit</button>
+              <button @click=deleteBook(book)>Delete</button>
+              <br/>
+              Author: {{book.title}} <br/>
+              Country: {{book.country}} <br/>
+              Language: {{book.language}} <br/>
+              Link: {{book.link}} <br/>
+              Pages: {{book.pages}} <br/>
+              Title: {{book.title}} <br/>
+              Year: {{book.year}}
+            </div>
+            <hr/>
+          </li>
+        </ul>
       </div>
 
       <script src="/dist/assets/js/app.js"></script>
