@@ -15,12 +15,11 @@
       </ul>
     </nav>
 
-    <h3 align="center">Add new Book</h3>
-    <books-add></books-add>
-    <br>
-    <hr>
-    <br>
-    <h3 align="center">Search a book</h3>
+    <!-- <h3 align="center">Add new Book</h3> -->
+    <!-- <books-add></books-add> -->
+    <!-- <br> -->
+    <!-- <hr> -->
+    <!-- <br> -->
     <books-view></books-view>
   </div>
 </template>
@@ -38,7 +37,4 @@ export default {
 </script>
 
 <style>
-body{
-  background-color: lightblue;
-}
 </style>
