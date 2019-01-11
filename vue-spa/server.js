@@ -2,11 +2,13 @@ const express = require("express");
 const app = express();
 const fs = require("fs");
 const path = require("path");
+var cors = require ("cors")
 
 const indexHTML = (() => {
   return fs.readFileSync(path.resolve(__dirname, "./index.html"), "utf-8");
 })();
 
+app.use(cors())
 app.use("/dist", express.static(path.resolve(__dirname, "./dist")));
 
 app.get("*", (req, res) => {

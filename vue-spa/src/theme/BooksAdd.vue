@@ -9,11 +9,17 @@
     <input class="form-control" type="text" v-model="title" placeholder="title">
     <input class="form-control" type="text" v-model="year" placeholder="year">
 
-    <input class="form-control success-btn" type="submit" value="Add" v-on:click="addBook()"/>
+    <input class="form-control success-btn" type="submit" value="Add" v-on:click="addBook()">
   </div>
 </template>
 
 <script>
+import vue from "vue";
+import axios from "axios";
+import VueAxios from "vue-axios";
+import db from "../components/firebaseInit";
+vue.use(VueAxios, axios);
+
 export default {
   data() {
     return {
@@ -25,18 +31,30 @@ export default {
       pages: '',
       title: '',
       year: ''
-    }
+    };
   },
-  created () {
-    console.log('BooksAdd component created')
+  created() {
+    console.log("BooksAdd component created");
   },
   methods: {
-    addBook () {
-      alert('add ' + this.title)
-    },
-
+    addBook() {
+      let book = {
+        'author': this.author,
+        'country': this.country,
+        'imageLink': this.imageLink,
+        'language': this.language,
+        'link': this.link,
+        'pages': this.pages,
+        'title': this.title,
+        'year': this.year
+      }
+      console.log("add: " + book.title);
+      vue.axios.post("http://localhost:5000/book", book).then(response => {
+        alert(response.data);
+      });
+    }
   }
-}
+};
 </script>
 
 <style>

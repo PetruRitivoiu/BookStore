@@ -89,7 +89,11 @@
 </template>
 
 <script>
+import vue from 'vue'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 import db from "../components/firebaseInit";
+vue.use(VueAxios, axios)
 
 export default {
   data() {
@@ -100,7 +104,7 @@ export default {
     };
   },
   created() {
-    console.log("Created event");
+    console.log("BooksView component created");
   },
   methods: {
     getBooksByAuthor() {
@@ -112,10 +116,16 @@ export default {
       });
     },
     editBook(book) {
-      alert("edit " + book.title);
+      console.log('edit ' + book.title)
+      vue.axios.put('http://localhost:5000/book/edit', book).then((response) => {
+        alert(response.data)
+      })
     },
     deleteBook(book) {
-      alert("delete " + book.title);
+      console.log('delete: ' + book.title)
+      vue.axios.put('http://localhost:5000/book/delete', book).then((response) => {
+        alert(response.data)
+      })
     }
   }
 };

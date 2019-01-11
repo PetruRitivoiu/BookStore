@@ -17,6 +17,7 @@
     "babel-loader": "^8.0.5",
     "babel-preset-es": "^1.0.0",
     "babel-preset-stage-2": "^6.24.1",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "firebase": "^5.7.2",
     "vue": "^2.5.21",
