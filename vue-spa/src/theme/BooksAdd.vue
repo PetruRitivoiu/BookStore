@@ -49,8 +49,10 @@ export default {
         'year': this.year
       }
       vue.axios.post("http://localhost:5000/book", book).then(response => {
-        console.log('Book added successfully ' + response.data);
+        console.log('Book added successfully ' + response.data)
       });
+
+      this.$router.push({name: 'Default'})
     }
   }
 };

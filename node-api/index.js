@@ -44,7 +44,7 @@ app.post("/book", function(req, res) {
 //Update
 app.put("/book/edit", function(req, res) {
   //edit book
-  res.send("Book edited " + req.body.title);
+  res.send("Not implemented yet :( Edit book with title: " + req.body.title);
 });
 
 //Delete
