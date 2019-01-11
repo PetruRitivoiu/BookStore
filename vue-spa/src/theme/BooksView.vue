@@ -122,9 +122,8 @@ export default {
       })
     },
     deleteBook(book) {
-      console.log('delete: ' + book.title)
       vue.axios.put('http://localhost:5000/book/delete', book).then((response) => {
-        alert(response.data)
+        console.log('book deleted successfuly: ' + response.data)
       })
     }
   }

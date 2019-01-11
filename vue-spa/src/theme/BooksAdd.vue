@@ -48,9 +48,8 @@ export default {
         'title': this.title,
         'year': this.year
       }
-      console.log("add: " + book.title);
       vue.axios.post("http://localhost:5000/book", book).then(response => {
-        alert(response.data);
+        console.log('Book added successfully ' + response.data);
       });
     }
   }
