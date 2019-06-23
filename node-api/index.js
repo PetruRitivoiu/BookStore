@@ -43,11 +43,31 @@ app.post("/book", function(req, res) {
 
 //Update
 app.put("/book/edit", function(req, res) {
-  //edit book
-  res.send("Not implemented yet :( Edit book with title: " + req.body.title);
+  let ref = db.ref(req.body.author);
+
+  ref
+    .orderByChild("title")
+    .equalTo(req.body.title)
+    .once('value')
+    .then(function (snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+        ref.child(childSnapshot.key).set({
+          author: req.body.author,
+          country: req.body.country,
+          imageLink: req.body.imageLink,
+          link: req.body.link,
+          pages: req.body.pages,
+          title: req.body.title,
+          year: req.body.year
+        });
+      });
+    });
+
+  res.send("Book edited: " + req.body.title);
 });
 
 //Delete
+//For some reason i get an error if i use DELETE verb insteand of PUT
 app.put("/book/delete", function(req, res) {
   let ref = db.ref(req.body.author);
 

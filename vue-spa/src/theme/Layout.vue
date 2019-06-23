@@ -8,7 +8,7 @@
           <router-link class="nav-link" to="/books-view">Search</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/books-add">Add</router-link>
+          <router-link class="nav-link" to="/books-manage-view">Manage</router-link>
         </li>
         <li class="nav-item">
           <router-link class="nav-link" to="#">About</router-link>
@@ -69,12 +69,12 @@
 
 <script>
 import BooksView from "./BooksView.vue";
-import BooksAdd from "./BooksAdd.vue";
+import BooksManageView from "./BooksManageView.vue";
 
 export default {
   components: {
     "books-view": BooksView,
-    "books-add": BooksAdd
+    "books-manage-view": BooksManageView
   }
 };
 </script>

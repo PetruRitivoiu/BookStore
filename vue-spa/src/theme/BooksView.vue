@@ -17,7 +17,7 @@
                   class="form-control form-control-lg"
                   placeholder="Author"
                   v-model="author"
-                  v-on:keydown.enter="getBooksByAuthor()"
+                  v-on:keydown.enter="handleGetBooksEvent()"
                 >
               </div>
               <div class="col-12 col-md-3">
@@ -25,7 +25,7 @@
                   type="submit"
                   value="Search"
                   class="btn btn-block btn-lg btn-primary"
-                  v-on:click="getBooksByAuthor()"
+                  v-on:click="handleGetBooksEvent()"
                 >
               </div>
             </div>
@@ -104,26 +104,52 @@ export default {
     };
   },
   created() {
+    this.getAllBooks();
     console.log("BooksView component created");
   },
   methods: {
+    handleGetBooksEvent() {
+      if (this.author){
+        this.getBooksByAuthor();
+      } else {
+        this.getAllBooks();
+      }
+    },
     getBooksByAuthor() {
       let context = this;
       let ref = db.ref(this.author);
 
       ref.on("value", function(snapshot) {
-        context.books = snapshot.val();
+        context.books = [];
+        let snap = snapshot.val();
+
+        for (var bk in snap){
+          if (snap[bk] && snap[bk].author){
+            context.books.push(snap[bk]);
+          }
+        }
+      });
+    },
+    getAllBooks() {
+      let context = this;
+      let ref = db.ref();
+
+      ref.on("value", function(snapshot){
+        context.books = [];
+        let booksTree = snapshot.val();
+        for (var author in booksTree){
+          for (var book in booksTree[author]){
+            context.books.push(booksTree[author][book]);
+          }
+        }
       });
     },
     editBook(book) {
-      console.log('edit ' + book.title)
-      vue.axios.put('http://localhost:5000/book/edit', book).then((response) => {
-        alert(response.data)
-      })
+      this.$router.push({name: "books-manage-view", params: {currentBook: book}});
     },
     deleteBook(book) {
       vue.axios.put('http://localhost:5000/book/delete', book).then((response) => {
-        console.log('book deleted successfuly: ' + response.data)
+        console.log('book deleted successfuly: ' + response.data);
       })
     }
   }
