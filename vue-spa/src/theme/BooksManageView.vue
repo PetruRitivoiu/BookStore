@@ -1,15 +1,20 @@
 <template>
   <div class="container">
-    <input class="form-control" type="text" v-model="book.author" placeholder="author">
-    <input class="form-control" type="text" v-model="book.country" placeholder="country">
-    <input class="form-control" type="text" v-model="book.imageLink" placeholder="imageLink">
-    <input class="form-control" type="text" v-model="book.language" placeholder="language">
-    <input class="form-control" type="text" v-model="book.link" placeholder="link">
-    <input class="form-control" type="text" v-model="book.pages" placeholder="pages">
-    <input class="form-control" type="text" v-model="book.title" placeholder="title">
-    <input class="form-control" type="text" v-model="book.year" placeholder="year">
+    <h2 align="center">{{title}}</h2>
+    </br>
 
-    <input id="addOrEditButton" class="form-control success-btn" type="submit" value="Submit" v-on:click="addOrEditBook()">
+    <div class="container">
+      <input class="form-control" type="text" v-model="book.author" placeholder="author">
+      <input class="form-control" type="text" v-model="book.country" placeholder="country">
+      <input class="form-control" type="text" v-model="book.imageLink" placeholder="imageLink">
+      <input class="form-control" type="text" v-model="book.language" placeholder="language">
+      <input class="form-control" type="text" v-model="book.link" placeholder="link">
+      <input class="form-control" type="text" v-model="book.pages" placeholder="pages">
+      <input class="form-control" type="text" v-model="book.title" placeholder="title">
+      <input class="form-control" type="text" v-model="book.year" placeholder="year">
+
+      <input id="addOrEditButton" class="form-control success-btn" type="submit" value="Submit" v-on:click="addOrEditBook()">
+    </div>
   </div>
 </template>
 
@@ -33,7 +38,8 @@ export default {
         title: "",
         year: ""
       },
-      edit: false
+      edit: false,
+      title: "Add a new book"
     };
   },
   created() {
@@ -48,6 +54,7 @@ export default {
       this.book.title = currentBook.title;
       this.book.year = currentBook.year;
 
+      this.title = "Edit an existing book";
       this.edit = true;
     }
 

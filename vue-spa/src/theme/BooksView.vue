@@ -35,8 +35,8 @@
     </header>
 
     <!-- Content -->
-    <div class="container books-div">
-      <div v-for="book in books" class="books-div">
+    <div class="container books-div list-group">
+      <div v-for="book in books" class="books-div list-group-item">
         <div class="row margin-row">
           <div class="col-12 col-md-2 col-lg-1">
             <strong>Author:</strong>
@@ -54,7 +54,7 @@
             <strong>Link:</strong>
           </div>
           <div class="col-6 col-md-10 col-lg-11">
-            <a v-bind:href="book.link" target="_blank">{{book.link}}</a>
+            <a v-bind:href="book.link" target="_blank" style="word-wrap: break-word;">{{book.link}}</a>
           </div>
         </div>
         <div class="row margin-row">
